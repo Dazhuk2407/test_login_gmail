@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 class App:
     def __init__(self, playwright: Playwright):
-        self.browser = playwright.firefox.launch(headless=False)
+        self.browser = playwright.firefox.launch()
         self.context = self.browser.new_context()
         self.page = self.context.new_page()
         self.page.goto("https://mail.google.com")
